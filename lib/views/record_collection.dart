@@ -186,6 +186,7 @@ class _RecordCollectionViewState extends State<RecordCollectionView> {
                   "Record Collection",
                   style: TextStyle(
                     fontSize: 15.sp,
+                    color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

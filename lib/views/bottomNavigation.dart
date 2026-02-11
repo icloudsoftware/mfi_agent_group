@@ -38,9 +38,8 @@ class BottomNavigation extends StatelessWidget {
 
         bottomNavigationBar: AnimatedNotchBottomBar(
           notchBottomBarController: notchController,
-
-          kIconSize: 24.0,
-          kBottomRadius: 30.0,
+          bottomBarHeight: 50, kIconSize: 18.0,
+          kBottomRadius: 35.0,
 
           color: const Color(0xFF2F2F2F),
           notchColor: Colors.orange,
@@ -52,7 +51,7 @@ class BottomNavigation extends StatelessWidget {
 
           itemLabelStyle: const TextStyle(
             color: Colors.white70,
-            fontSize: 12,
+            fontSize: 10,
           ),
 
           bottomBarItems: const [

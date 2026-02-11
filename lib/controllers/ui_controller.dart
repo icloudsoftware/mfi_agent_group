@@ -13,8 +13,14 @@ class BottomNavController extends GetxController {
 
 class ContectController extends GetxController {
   var selectedFilter = 0.obs;
+  var searchQuery = ''.obs;
 
   void changeFilter(int index) {
     selectedFilter.value = index;
   }
+
+  void updateSearch(String value) {
+    searchQuery.value = value.toLowerCase();
+  }
 }
+

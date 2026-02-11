@@ -1,4 +1,5 @@
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -47,18 +48,20 @@ class CollectionsView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(CupertinoIcons.back)),
                     Text(
                       AppTexts.collections,
                       style: TextStyle(
-                        fontSize: 22.sp,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     CircleAvatar(
+                      radius: 17,
                       backgroundColor: AppColors.primary,
                       child: IconButton(
                         onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>RecordCollectionView()));},
-                        icon: Icon(Icons.add, color: Colors.white),
+                        icon: Icon(Icons.add, color: Colors.white,size: 20,),
                       ),
                     ),
                   ],
@@ -96,7 +99,7 @@ class CollectionsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _stat(AppTexts.totalCollected, "₹370"),
-                    Container(height: 40.h, width: 1, color: Colors.grey[300]),
+                    Container(height: 30.h, width: 1, color: Colors.grey[300]),
                     _stat(AppTexts.transactions, "2"),
                   ],
                 ),
@@ -130,7 +133,7 @@ class CollectionsView extends StatelessWidget {
         Text(
           value,
           style: TextStyle(
-            fontSize: 18.sp,
+            fontSize: 15.sp,
             fontWeight: FontWeight.bold,
             color: AppColors.green,
           ),

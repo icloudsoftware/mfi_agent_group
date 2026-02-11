@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +23,6 @@ class _IncentivesScreenState extends State<IncentivesScreen>
     {"date": "20/01/2026", "amount": 20.00, "status": "Paid"},
   ];
 
-
   @override
   void initState() {
     super.initState();
@@ -34,12 +34,18 @@ class _IncentivesScreenState extends State<IncentivesScreen>
     return Scaffold(
       backgroundColor: const Color(0xffF6F8FC),
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(CupertinoIcons.back, color: Colors.white),
+        ),
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
         title: Text(
           "Incentives",
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.w600,
             fontSize: 18.sp,
           ),
@@ -49,7 +55,7 @@ class _IncentivesScreenState extends State<IncentivesScreen>
         children: [
           SizedBox(height: 12.h),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.w,),
+            margin: EdgeInsets.symmetric(horizontal: 8.w),
             padding: EdgeInsets.all(2.w),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -57,25 +63,37 @@ class _IncentivesScreenState extends State<IncentivesScreen>
             ),
             child: TabBar(
               controller: _tabController,
-              dividerColor: Colors.transparent,
               isScrollable: false,
+              dividerColor: Colors.transparent,
+
               indicator: BubbleTabIndicator(
-                indicatorHeight: 34.w,
+                indicatorHeight: 36.h,
                 indicatorColor: Colors.blue,
-                indicatorRadius: 10.r,
+                indicatorRadius: 20.r,
                 tabBarIndicatorSize: TabBarIndicatorSize.tab,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 30.w,
+                  vertical: 6.h,
+                ),
               ),
+
               labelColor: Colors.white,
-              unselectedLabelColor: Colors.black,
-              labelStyle:
-              TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w600),
-              tabs: [
-                _tabItem("All", 60.w),
-                _tabItem("Pending", 100.w),
-                _tabItem("Approve", 150.w),
-                _tabItem("Paid", 60.w),
+              unselectedLabelColor: Colors.black87,
+
+              labelStyle: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+              ),
+
+              tabs: const [
+                Tab(child: Center(child: Text("All"))),
+                Tab(child: Center(child: Text("Pending"))),
+                Tab(child: Center(child: Text("Approve"))),
+                Tab(child: Center(child: Text("Paid"))),
               ],
             ),
+
+
           ),
 
           SizedBox(height: 12.h),
@@ -91,7 +109,6 @@ class _IncentivesScreenState extends State<IncentivesScreen>
               ],
             ),
           ),
-
         ],
       ),
     );
@@ -99,7 +116,6 @@ class _IncentivesScreenState extends State<IncentivesScreen>
 
   List<Map<String, dynamic>> _filter(String status) =>
       incentives.where((e) => e["status"] == status).toList();
-
 
   Widget _buildList(List<Map<String, dynamic>> list) {
     if (list.isEmpty) {
@@ -130,10 +146,7 @@ Widget _tabItem(String text, double width) {
     height: 30.h,
     width: width,
     child: Center(
-        child: Text(
-          text,
-          maxLines: 1,
-          style: TextStyle(
-              fontSize: 12.sp),)),
+      child: Text(text, maxLines: 1, style: TextStyle(fontSize: 12.sp)),
+    ),
   );
 }

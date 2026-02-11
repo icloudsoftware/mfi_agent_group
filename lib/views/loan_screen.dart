@@ -142,7 +142,7 @@ class LoanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 16.h),
-      padding: EdgeInsets.all(16.w),
+      padding: EdgeInsets.all(10.w),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
@@ -162,7 +162,7 @@ class LoanCard extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.blue,
                   fontWeight: FontWeight.w600,
-                  fontSize: 14.sp,
+                  fontSize: 12.sp,
                 ),
               ),
               Container(
@@ -185,11 +185,11 @@ class LoanCard extends StatelessWidget {
             ],
           ),
 
-          SizedBox(height: 6.h),
+          SizedBox(height: 2.h),
 
           Text(
             "Anita Kumari",
-            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
           ),
 
           SizedBox(height: 12.h),
@@ -209,13 +209,13 @@ class LoanCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Repayment Progress", style: TextStyle(fontSize: 14.sp)),
+              Text("Repayment Progress", style: TextStyle(fontSize: 12.sp)),
               Text(
                 "${(progress * 100).toInt()}%",
                 style: TextStyle(
                   color: Colors.green,
                   fontWeight: FontWeight.bold,
-                  fontSize: 14.sp,
+                  fontSize: 12.sp,
                 ),
               ),
             ],
@@ -225,18 +225,18 @@ class LoanCard extends StatelessWidget {
 
           LinearPercentIndicator(
             padding: EdgeInsets.zero,
-            lineHeight: 8.h,
+            lineHeight: 5.h,
             percent: progress,
             barRadius: Radius.circular(10.r),
             backgroundColor: Colors.grey.shade200,
             progressColor: Colors.green,
           ),
 
-          SizedBox(height: 16.h),
+          SizedBox(height: 10.h),
 
           Wrap(
             spacing: 12.w,
-            runSpacing: 12.h,
+            runSpacing: 8.h,
             children: const [
               InfoChip(icon: Icons.calendar_today, text: "25/4/2024"),
               InfoChip(icon: Icons.percent, text: "12% Interest"),
@@ -252,7 +252,7 @@ class LoanCard extends StatelessWidget {
   Widget _amountBox(String title, String value, Color color) {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.all(12.w),
+        padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
           color: const Color(0xffF6F8FC),
           borderRadius: BorderRadius.circular(12.r),

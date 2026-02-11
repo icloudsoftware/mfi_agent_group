@@ -25,124 +25,126 @@ class _DashboardViewState extends State<DashboardView> {
       backgroundColor: AppColors.background,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(AppTexts.goodDay, style: TextStyle(fontSize: 14.sp)),
-              Text(
-                AppTexts.agentDashboard,
-                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
-              ),
-
-              SizedBox(height: 20.h),
-
-              _statCard(
-                title: "Total Collection",
-                value: "₹3",
-                icon: Icons.currency_rupee_outlined,
-                color: AppColors.primary,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CollectionsView()),
-                  );
-                },
-              ),
-              _statCard(
-                title: "Pending Dues",
-                value: "3",
-                icon: Icons.pending_actions,
-                color: AppColors.primary,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CollectionsView()),
-                  );
-                },
-              ),
-              _statCard(
-                title: "Incentive Earned",
-                value: "₹0",
-                icon: Icons.emoji_events,
-                color: AppColors.blue,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => IncentivesScreen()),
-                  );
-                },
-              ),
-              _statCard(
-                title: "Active Loans",
-                value: "3",
-                icon: Icons.account_balance_wallet,
-                color: AppColors.primary,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoansScreen()),
-                  );
-                },
-              ),
-
-              SizedBox(height: 24.h),
-
-              Text(
-                AppTexts.quickActions,
-                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
-              ),
-
-              SizedBox(height: 12.h),
-
-              SizedBox(
-                height: 160.h,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    _quickActionCard(
-                      title: "Record Collection",
-                      icon: Icons.add,
-                      color: AppColors.green,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RecordCollectionView(),
-                          ),
-                        );
-                      },
-                    ),
-                    _quickActionCard(
-                      title: "Add Customer",
-                      icon: Icons.person_add,
-                      color: AppColors.blue,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AddCustomerView(),
-                          ),
-                        );
-                      },
-                    ),
-                    _quickActionCard(
-                      title: "New Loan",
-                      icon: Icons.account_balance,
-                      color: AppColors.orange,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => NewLoanScreen(),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+          child: Container(
+            padding: EdgeInsets.fromLTRB(8.w, 8.w, 8.w, 8.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(AppTexts.goodDay, style: TextStyle(fontSize: 14.sp)),
+                Text(
+                  AppTexts.agentDashboard,
+                  style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
                 ),
-              ),
-            ],
+          
+                SizedBox(height: 20.h),
+          
+                _statCard(
+                  title: "Total Collection",
+                  value: "₹3",
+                  icon: Icons.currency_rupee_outlined,
+                  color: AppColors.primary,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CollectionsView()),
+                    );
+                  },
+                ),
+                _statCard(
+                  title: "Pending Dues",
+                  value: "3",
+                  icon: Icons.pending_actions,
+                  color: AppColors.primary,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CollectionsView()),
+                    );
+                  },
+                ),
+                _statCard(
+                  title: "Incentive Earned",
+                  value: "₹0",
+                  icon: Icons.emoji_events,
+                  color: AppColors.blue,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => IncentivesScreen()),
+                    );
+                  },
+                ),
+                _statCard(
+                  title: "Active Loans",
+                  value: "3",
+                  icon: Icons.account_balance_wallet,
+                  color: AppColors.primary,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoansScreen()),
+                    );
+                  },
+                ),
+          
+                SizedBox(height: 24.h),
+          
+                Text(
+                  AppTexts.quickActions,
+                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+                ),
+          
+                SizedBox(height: 12.h),
+          
+                SizedBox(
+                  height: 130.h,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      _quickActionCard(
+                        title: "Record Collection",
+                        icon: Icons.add,
+                        color: AppColors.green,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RecordCollectionView(),
+                            ),
+                          );
+                        },
+                      ),
+                      _quickActionCard(
+                        title: "Add Customer",
+                        icon: Icons.person_add,
+                        color: AppColors.blue,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddCustomerView(),
+                            ),
+                          );
+                        },
+                      ),
+                      _quickActionCard(
+                        title: "New Loan",
+                        icon: Icons.account_balance,
+                        color: AppColors.orange,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewLoanScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -219,7 +221,7 @@ class _DashboardViewState extends State<DashboardView> {
       onTap: onTap,
       borderRadius: BorderRadius.circular(16.r),
       child: Container(
-        width: 140.w,
+        width: 120.w,
         margin: EdgeInsets.only(right: 12.w),
         padding: EdgeInsets.all(16.w),
         decoration: BoxDecoration(

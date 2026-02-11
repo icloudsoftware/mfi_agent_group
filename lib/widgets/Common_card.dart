@@ -12,7 +12,7 @@ class InfoChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
         color: const Color(0xffF6F8FC),
         borderRadius: BorderRadius.circular(20),
@@ -22,7 +22,7 @@ class InfoChip extends StatelessWidget {
         children: [
           Icon(icon, size: 16, color: Colors.grey),
           const SizedBox(width: 6),
-          Text(text),
+          Text(text,style: TextStyle(fontSize: 12.sp),),
         ],
       ),
     );
